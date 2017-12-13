@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var reverse = function(x) {  
+    var res = 0;  
+    while(x){  
+        res = res*10 +x%10;  
+        x = parseInt(x/10);  
+    }  
+    if(res> Math.pow(2,31) || -res>Math.pow(2,31)){  //防止溢出
+       res = 0;  
+    }  
+    return res;  
+};
+console.log(reverse(123456))
+//不创建内存空间就是比较好的解决办法， 还是那个思路 少循环， 少建内存。
+    </script>
+</body>
+</html>

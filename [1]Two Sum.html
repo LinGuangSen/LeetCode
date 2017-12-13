@@ -1,0 +1,32 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+     function twoSum(arr,sum) {
+        var t1, t2, index = 0,len = arr.length,has = {},  array = [];
+        while(len> index) {
+            t1 = len-index-1
+            has[arr[t1]] = t1
+            t2 = has[sum-arr[index]]
+            if(t2 != undefined && t2 != index){
+                array.push(index)
+                index > t2 ? array.unshift(t2) : array.push(t2)
+                break;
+            }
+            has[arr[index]] = index;
+            index++
+        }
+        return array
+     }
+     console.log(twoSum([1,2,3,4,5,6,7,8,9],9))
+
+     //实现办法有很多，一般方法循环两次，一次循环为优解. 尽量减少循环次数
+ </script>   
+</body>
+</html>

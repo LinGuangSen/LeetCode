@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+        function palindromeNum(num) {
+            if(num < 0 && num > Math.pow(2,31)) return false //防止溢出
+            var len = 1;
+            while(num/len > 10){
+                len = len * 10
+            }
+            console.log(len)
+            while( num != 0){
+                var first = parseInt(num/len) 
+                var last  = num % 10
+                if(first != last){
+                    return false
+                }
+                num = parseInt((num % len) / 10)
+                len = len / 100
+            }
+            return true
+        }
+        console.log(palindromeNum(121))
+
+        //整体思路
+        //判断回文数，想办法取头尾比较 首位不同则不是回文数 不创建内存解决为优解
+    </script>
+</html>
